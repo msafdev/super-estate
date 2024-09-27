@@ -154,7 +154,7 @@ const MapWidget = () => {
           </OverlayView>
         ))}
       </GoogleMap>
-      <Control map={map} />
+      <Control map={map} bounds={mapBounds} />
       <Search onSearchSuccess={panToLocation} />
       {loading ? (
         <div className="absolute flex items-center justify-center bottom-8 rounded-full size-10 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
