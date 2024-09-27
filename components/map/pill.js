@@ -77,7 +77,7 @@ export default function Pill({ name, price, address, type }) {
                 zIndex: isOpen ? 100 : 0,
               }}
             >
-              <div className="flex h-full flex-col">
+              <div className="flex h-full flex-col gap-y-3">
                 <motion.span
                   layoutId={`popover-label-${uniqueId}`}
                   aria-hidden="true"
@@ -102,7 +102,7 @@ export default function Pill({ name, price, address, type }) {
                   style={{
                     opacity: pill ? 0 : 1,
                   }}
-                  className="flex flex-col w-full px-4 pb-3"
+                  className="flex flex-col w-full px-4 pb-3 gap-y-1.5"
                 >
                   <span className="text-sm text-white mr-auto">{name}</span>
                   <span className="text-xs text-zinc-400 mr-auto">
