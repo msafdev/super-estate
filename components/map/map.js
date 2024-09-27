@@ -120,6 +120,13 @@ const MapWidget = () => {
     }
   };
 
+  const panToLocation = ({ lat, lng }) => {
+    if (map) {
+      map.panTo({ lat, lng });
+      map.setZoom(14);
+    }
+  };
+
   if (!isLoaded) return <div className="w-svw h-svh bg-[#F9F5ED]"></div>;
 
   return (
@@ -151,7 +158,7 @@ const MapWidget = () => {
         ))}
       </GoogleMap>
       <Control map={map} />
-      <Search />
+      <Search onSearchSuccess={panToLocation} />
       {loading && (
         <div className="absolute flex items-center justify-center bottom-8 rounded-full size-10 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
           <Loader2 className="text-white size-5 animate-spin mx-auto" />
