@@ -36,8 +36,8 @@ const Search = ({ onSearchSuccess }) => {
   };
 
   return (
-    <div className="absolute top-24 left-0 right-0 z-10 flex flex-col items-center justify-center p-4">
-      <form className="w-full max-w-md" onSubmit={handleSubmit}>
+    <div className="absolute top-24 left-0 right-0 z-10 flex flex-col items-center justify-center p-4 pointer-events-none">
+      <form className="w-full max-w-md pointer-events-auto" onSubmit={handleSubmit}>
         <div className="mx-auto border-[hsla(0,0%,100%,1)] bg-[rgba(255,255,255,0.77)] shadow-[0_0_60px_0_rgba(0,0,0,0.16)] backdrop-blur-sm outline outline-[hsla(0,0%,0%,0.08)] outline-offset-0 outline-1 outline-solid transition-colors duration-200 ease-in text-base cursor-text hover:bg-[hsla(0,0%,100%,0.88)] w-full overflow-hidden focus:outline-none focus:ring-0 rounded-full pl-6 pr-1 py-[4px] flex items-center">
           <input
             type="text"
