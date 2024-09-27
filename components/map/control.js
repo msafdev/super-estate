@@ -1,9 +1,10 @@
 import { getSummary } from "@/utils/actions";
-import { Bot, Earth, Minus, Plus } from "lucide-react";
+import { Bot, Earth, Loader2, Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Control = ({ map, bounds }) => {
+  const [loading, setLoading] = useState(false);
   const [summary, setSummary] = useState("");
 
   const zoomIn = () => {
@@ -27,6 +28,8 @@ const Control = ({ map, bounds }) => {
   };
 
   const handleBot = async () => {
+    setLoading(true);
+
     if (bounds) {
       const { summary } = await getSummary(
         `Provide a summary for the area within the bounds: ${JSON.stringify(
@@ -34,6 +37,7 @@ const Control = ({ map, bounds }) => {
         )}`
       );
       setSummary(summary);
+      setLoading(false);
     }
 
     setTimeout(() => setSummary(""), 5000);
@@ -44,6 +48,8 @@ const Control = ({ map, bounds }) => {
       <AnimatePresence>
         {summary && (
           <motion.div
+            key="summary"
+            layout
             className="map-control-summary px-4 py-3"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +66,11 @@ const Control = ({ map, bounds }) => {
           className="map-control-button"
           title="Get Summary"
         >
-          <Bot className="text-black/60 size-5" />
+          {loading ? (
+            <Loader2 className="text-black/60 size-5 animate-spin" />
+          ) : (
+            <Bot className="text-black/60 size-5" />
+          )}
         </button>
       </div>
       <div className="map-control">
