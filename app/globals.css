@@ -43,7 +43,7 @@ body {
 
   @media screen and (max-width: 767px) {
     .map-control-wrapper {
-      top: 50vh;
+      top: 16px;
       bottom: auto;
     }
   }
