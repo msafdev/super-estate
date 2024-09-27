@@ -44,7 +44,7 @@ const Search = ({ onSearchSuccess }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Where do you want to go?"
-            className="input-search bg-transparent focus:outline-none h-9 flex-grow"
+            className="input-search bg-transparent text-black font-medium focus:outline-none h-9 flex-grow"
           />
           <div className="bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-800 rounded-full p-[1px]">
             <button
