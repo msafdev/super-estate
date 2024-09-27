@@ -9,8 +9,7 @@ import Search from "@/components/map/search";
 import { MapStyle } from "@/constants/map-styles";
 import { fetchLocations, filterCloseLocations } from "@/utils/location";
 import { Loader2 } from "lucide-react";
-import "@/devlink-demo/global.css";
-import Pill from "./pill";
+import Pill from "@/components/map/pill";
 
 const mapContainerStyle = {
   width: "100%",

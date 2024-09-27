@@ -25,4 +25,85 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .map-control-wrapper {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: 16px;
+    bottom: 20px;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .map-control-wrapper {
+      top: 50vh;
+      bottom: auto;
+    }
+  }
+
+  .map-control {
+    width: 44px;
+    padding: 3px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    border-radius: 24px;
+
+    background-color: hsla(0, 0%, 100%, 0.5);
+
+    box-shadow: 0 4px 24px -4px hsla(0, 0%, 0%, 0.28),
+      inset 0 0 0 0.5px hsla(0, 0%, 100%, 1), 0 0 0 0.5px hsla(0, 0%, 0%, 0.28);
+    backdrop-filter: blur(16px);
+
+    cursor: pointer;
+  }
+
+  .map-control-button {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+
+    transition: box-shadow 200ms ease, background-color 200ms ease;
+  }
+
+  .map-control-button:hover {
+    background-color: hsla(0, 0%, 100%, 1);
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.12);
+  }
+
+  .input-search {
+    display: flex;
+    width: 100%;
+    height: 38px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .marker-pill {
+    position: relative;
+    z-index: 10;
+  
+    display: flex;
+    padding: 6px 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  
+    border: 1px solid var(--cbda-6);
+    border-radius: 20px;
+  
+    background-color: hsla(0, 2.27%, 16.30%, 1.00);
+  
+    color: hsla(228.00000000000003, 0.00%, 100.00%, 1.00);
+  }
 }
