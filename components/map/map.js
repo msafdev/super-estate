@@ -9,7 +9,7 @@ import Search from "@/components/map/search";
 import { MapStyle } from "@/constants/map-styles";
 import { fetchLocations, filterCloseLocations } from "@/utils/location";
 import { Loader2 } from "lucide-react";
-import "../../devlink-demo/global.css";
+import "@/devlink-demo/global.css";
 import Pill from "./pill";
 
 const mapContainerStyle = {
@@ -21,8 +21,6 @@ const center = {
   lat: 40.748817,
   lng: -73.985428,
 };
-
-const pin = "./icons/pin.png";
 
 const libraries = ["places"];
 
