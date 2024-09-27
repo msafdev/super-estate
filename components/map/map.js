@@ -88,6 +88,7 @@ const MapWidget = () => {
       disableDefaultUI: true,
       minZoom: 8,
       maxZoom: 16,
+      keyboardShortcuts: false,
     }),
     []
   );
@@ -157,11 +158,11 @@ const MapWidget = () => {
       <Control map={map} bounds={mapBounds} />
       <Search onSearchSuccess={panToLocation} />
       {loading ? (
-        <div className="absolute flex items-center justify-center bottom-8 rounded-full size-10 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
+        <div className="absolute flex items-center justify-center bottom-[92px] top-auto md:top-auto md:bottom-8 rounded-full size-10 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
           <Loader2 className="text-white size-5 animate-spin mx-auto" />
         </div>
       ) : (
-        <div className="absolute flex items-center justify-center bottom-8 px-4 rounded-full min-h-10 flex-nowrap text-nowrap left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
+        <div className="absolute flex items-center justify-center bottom-[92px] top-auto md:top-auto md:bottom-8 px-4 rounded-full min-h-10 flex-nowrap text-nowrap left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur">
           <p className="text-white text-sm font-medium !m-0">
             Showing {locations.length} results
           </p>
