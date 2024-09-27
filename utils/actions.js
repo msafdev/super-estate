@@ -1,6 +1,6 @@
 "use server";
 
-import { generateObject } from "ai";
+import { generateObject, generateText } from "ai";
 import { google } from "@ai-sdk/google";
 import { z } from "zod";
 
@@ -23,4 +23,18 @@ export async function getPositions(input) {
   });
 
   return { positions };
+}
+
+export async function getSummary(input) {
+  "use server";
+
+  const { text: summary } = await generateText({
+    model: google("gemini-1.5-flash-latest"),
+    system:
+      "You generate a REALLY SIMPLE summary and benefits (as a property) from a place that is inside a coordinate object. The coordinate object has a east, north, south, and west coordinate. ONLY GENERATE TEXT, NO MARKDOWNS/HTML.",
+    prompt: input,
+    schema: z.string().describe("The summary of the place inside the bounds."),
+  });
+
+  return { summary };
 }
